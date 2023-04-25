@@ -1,0 +1,15 @@
+python
+import csv
+import os
+
+data_dir = "recommendation_engine/data"
+if not os.path.exists(data_dir):
+    os.makedirs(data_dir)
+
+filename = os.path.join(data_dir, "item_data.csv")
+with open(filename, "w", newline="") as csvfile:
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerow(["item_id", "item_name", "description", "category"])
+    csvwriter.writerow(["101", "Item A", "First item in the catalog", "Category X"])
+    csvwriter.writerow(["102", "Item B", "Second item in the catalog", "Category Y"])
+    csvwriter.writerow(["103", "Item C", "Third item in the catalog", "Category X"])
